@@ -1,0 +1,23 @@
+make clean
+
+export CC=arm-uclinuxeabi-gcc
+export CPP=arm-uclinuxeabi-cpp
+export CXX=arm-uclinuxeabi-g++
+export AS=arm-uclinuxeabi-as
+export LD=arm-uclinuxeabi-ld
+export AR=arm-uclinuxeabi-ar
+export STRIP=arm-uclinuxeabi-strip
+export RANLIB=arm-uclinuxeabi-ranlib
+export OBJDUMP=arm-uclinuxeabi-objdump
+
+export CFLAGS="-I. -I/usr/local/minigui/cross/arm/cortex-m3/include -mcpu=cortex-m3 -mthumb"
+export LDFLAGS="-L/usr/local/minigui/cross/arm/cortex-m3/lib"
+
+./configure --build=i686-linux --host=arm-linux --target=arm-linux --prefix=/usr/local/minigui/cross/arm/cortex-m3 --enable-static=yes --enable-shared=no
+
+make 
+
+make install
+
+echo "libjpeg-v7 Make successful."
+
