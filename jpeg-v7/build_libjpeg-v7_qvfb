@@ -1,0 +1,13 @@
+make clean
+
+export CFLAGS="-I. -I/usr/local/minigui/local/include"
+export LDFLAGS="-L/usr/local/minigui/local/lib"
+
+./configure --build=i686-linux --host=i686-linux --target=i686-linux --prefix=/usr/local/minigui/local --enable-static=yes --enable-shared=no
+
+make 
+
+make install
+
+echo "libjpeg-v7 Make successful."
+
